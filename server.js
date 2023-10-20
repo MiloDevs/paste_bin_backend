@@ -14,7 +14,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
 mongoose.connect(
-  "mongodb+srv://milodevs:X1UbbfUM8FA0H8gf@milodevs-db.dcvfwil.mongodb.net/paste-bin?retryWrites=true&w=majority", {useNewUrlParser: true});
+  process.env.MONGODB_URI, {useNewUrlParser: true});
 
 if(mongoose.connection.readyState){
 console.log('Connected to DB')
